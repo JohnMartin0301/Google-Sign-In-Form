@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="google icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <title>Google Sign In Form</title>
+</head>
+<body>
+  <main class="inputContainer">
+    <img src="google.png" alt="" width="80" height="30">
+    <h2 class="login">Sign in</h2>
+    <h4 class="use">to continue to Gmail</h4>
+    <input type="text" class="gInput">
+    <label class="inputLabel"></label>
+    <div class="forgotContainer">
+      <h5 class="forgot">Forgot email?</h5>
+    </div>
+    <h4 class="guest">Not your computer? Use Guest mode to sign in privately. </h4>
+    <span class="learnmore">Learn more</span>
+    <div class="buttonContainer">
+      <a href="" class="btnCreate">Create account</a>
+      <a href="" class="btnNext">Next</a>
+    </div>
+  </main>
+
+  <div class="footer">
+    <!-- Language Dropdown -->
+    <div class="language-dropdown">
+      <div class="language-selected" id="languageSelected">English(United States)</div>
+      <span>&#9660;</span> <!-- Unicode for a downward-pointing triangle -->
+      <div class="language-dropdown-content" id="languageDropdown">
+        <a href="#">Afrikaans</a>
+        <a href="#">azərbaycan</a>
+        <a href="#">bosanski</a>
+        <a href="#">català</a>
+        <a href="#">Čeština</a>
+        <a href="#">Cymraeg</a>
+        <a href="#">Dansk</a>
+        <a href="#">Deutsch</a>
+        <a href="#">Deutsch</a>
+        <a href="#">English (United Kingdom)</a>
+        <a href="#">English (United States)</a>
+        <a href="#">Español (España)</a>
+        <a href="#">Español (Latinoamérica)</a>
+        <a href="#">Filipino</a>
+        <a href="#">Français (Canada)</a>
+        <a href="#">Français (France)</a>
+        <a href="#">Gaeilge</a>
+        <a href="#">galego</a>
+        <a href="#">Indonesia</a>
+        <a href="#">isiZulu</a>
+        <a href="#">íslenska</a>
+        <a href="#">Kiswahili</a>
+        <a href="#">latviešu</a>
+        <a href="#">lietuvių</a>
+        <a href="#">magyar</a>
+        <a href="#">Melayu</a>
+        <a href="#">Nederlands</a>
+        <a href="#">norsk</a>
+        <a href="#">o‘zbek</a>
+        <a href="#">shqip</a>
+        <a href="#">Tiếng Việt</a>
+        <a href="#">Türkçe</a>
+        <a href="#">Ελληνικά</a>
+        <a href="#">беларуская</a>
+        <a href="#">български</a>
+        <a href="#">кыргызча</a>
+        <a href="#">қазақ тілі</a>
+        <a href="#">македонски</a>
+        <a href="#">монгол</a>
+        <a href="#">Русский</a>
+        <a href="#">српски (ћирилица)</a>
+        <a href="#">Українська</a>
+        <a href="#">ქართული</a>
+        <a href="#">հայերեն</a>
+        <a href="#">‫עברית</a>
+        <a href="#">‫اردو</a>
+        <a href="#">‫العربية</a>
+        <a href="#">‫فارسی</a>
+        <a href="#">नेपाली</a>
+        <a href="#">मराठी</a>
+        <a href="#">हिन्दी</a>
+        <a href="#">অসমীয়া</a>
+        <a href="#">বাংলা</a>
+        <a href="#">ਪੰਜਾਬੀ</a>
+        <a href="#">ગુજરાતી</a>
+        <a href="#">ଓଡ଼ିଆ</a>
+        <a href="#">தமிழ்</a>
+        <a href="#">తెలుగు</a>
+        <a href="#">ಕನ್ನಡ</a>
+        <a href="#">മലയാളം</a>
+        <a href="#">සිංහල</a>
+        <a href="#">ไทย</a>
+        <a href="#">ລາວ</a>
+        <a href="#">မြန်မာ</a>
+        <a href="#">ខ្មែរ</a>
+        <a href="#">한국어</a>
+        <a href="#">中文（香港</a>
+        <a href="#">日本語</a>
+        <a href="#">简体中文</a>
+        <a href="#">繁體中文</a>
+
+        <!-- Add more language options as needed -->
+      </div>
+    </div>
+    <!-- Help Link -->
+    <a href="#">Help</a>
+    <!-- Privacy Link -->
+    <a href="#">Privacy</a>
+    <!-- Terms Link -->
+    <a href="#">Terms</a>
+  </div>
+
+
+  <script>
+   // To handle the language dropdown
+    document.addEventListener('DOMContentLoaded', function () {
+      const languageDropdown = document.querySelector('.language-dropdown');
+      const languageSelected = document.getElementById('languageSelected');
+      const languageOptions = document.getElementById('languageDropdown');
+
+      languageSelected.addEventListener('click', function () {
+        languageOptions.style.display = languageOptions.style.display === 'block' ? 'none' : 'block';
+      });
+
+      // To hide the dropdown when clicking outside of it
+      window.addEventListener('click', function (event) {
+        if (!languageDropdown.contains(event.target)) {
+          languageOptions.style.display = 'none';
+        }
+      });
+
+      // To handle language selection
+      languageOptions.querySelectorAll('a').forEach(function (option) {
+        option.addEventListener('click', function () {
+          const selectedLanguage = this.textContent;
+          languageSelected.textContent = selectedLanguage;
+          languageOptions.style.display = 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
